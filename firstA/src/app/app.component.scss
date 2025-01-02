@@ -1,0 +1,161 @@
+:root {
+    --main-width: 50vw;
+    /* Define the variable */
+}
+
+// https://www.pngall.com/wp-content/uploads/2/Ink-PNG-Clipart.png
+*::selection {
+    color: gold;
+}
+
+html,
+body {
+    height: 100%;
+    /* Ensures html and body occupy the full viewport height */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container{
+    height: 200vh;
+    width: 100vh;
+}
+
+.first {
+    // position: absolute;
+    height: 100vh;
+    width: 99%;
+    // border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-X: scroll;
+}
+
+.first::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(2Image1.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.first::-webkit-scrollbar {
+    height: 0.5vh;
+    width: 0.8vh;
+}
+
+.first::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.first::-webkit-scrollbar-thumb {
+    // background: rgba(0, 4, 255, 0.39);
+    border-radius: 10px;
+}
+
+.first::-webkit-scrollbar-thumb:active {
+    background: rgb(0, 4, 255);
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.image img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    min-height: 10%;
+    max-height: 100%;
+    min-width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.918);
+    // color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &>h1 {
+        z-index: 5;
+        font-size: xx-large;
+        cursor:pointer;
+    }
+}
+
+
+.slide > h1 {
+    font-size: xx-small;
+    font-weight: bold;
+    // background: linear-gradient(90deg, #fff, #f1c40f, #fff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 5s linear infinite;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+
+@keyframes shine {
+    0% {
+        background-position: -200% 0;
+    }
+    10% {
+        background-position: 200% 0;
+    }
+}
+
+
+// .slide::before{
+//     content:"";
+//     position: absolute;
+//     inset: 0;
+//     background-image: url(Eimage1.jpg);
+//     background-size: cover;
+//     background-position: center;
+//     // z-index: -1;
+//     mask-image: url(Ink.png);
+//     mask-size: cover;
+//     mask-position: center;
+
+// }
+
+.second {
+    height: 100vh;
+    width: 99%;
+    background-color: rgba(255, 101, 101, 0.384);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-X: scroll;
+}
+
+.second::before {
+    content: "";
+    position: relative;
+    inset: 0;
+    background-image: url(2Image1.png);
+    background-size: cover;
+    background-position: center;
+}
